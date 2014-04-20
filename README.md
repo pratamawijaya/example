@@ -1,4 +1,4 @@
 example
 =======
 
-all exa ple
+i have created some basic or example android project
