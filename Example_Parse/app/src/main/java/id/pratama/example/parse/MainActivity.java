@@ -5,19 +5,34 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.parse.ParseObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import id.pratama.example.parse.entity.Book;
+
 
 public class MainActivity extends ActionBarActivity {
+
+    private Book book;
+    private List<Book> listBook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        book = ParseObject.create(Book.class);
+
+        listBook = new ArrayList<Book>();
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
