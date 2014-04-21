@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.7.+'
+    }
+}
+apply plugin: 'android-library'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion '19.0.3'
+
+    defaultConfig {
+        minSdkVersion 10
+        targetSdkVersion 19
+        versionName "1.0"
+        versionCode 1
+    }
+
+    // This is important, it will run lint checks but won't abort build
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    // Support Libraries
+    compile 'com.android.support:support-v4:+'
+    compile "com.android.support:appcompat-v7:+"
+
+    compile 'com.nineoldandroids:library:2.4.+'
+}
+
+// Used to update in Maven
+//apply from: '../maven_push.gradle'
