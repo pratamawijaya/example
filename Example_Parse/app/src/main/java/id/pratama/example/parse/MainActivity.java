@@ -1,32 +1,47 @@
 package id.pratama.example.parse;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import id.pratama.example.parse.entity.Book;
-
 
 public class MainActivity extends ActionBarActivity {
 
-    private Book book;
-    private List<Book> listBook;
+    private List<ParseObject> listBook;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        book = ParseObject.create(Book.class);
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
 
-        listBook = new ArrayList<Book>();
+        listBook = new ArrayList<ParseObject>();
+//        listBook.add(new Toko("Gramedia Lampung","Jl. Jenderal Sudirman"));
+//        listBook.add(new Toko("Gramedia Jakarta","Jl. Malioboro"));
 
+
+        progressDialog.show();
+        // saving in background
+        ParseObject.saveAllInBackground(listBook, new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                progressDialog.dismiss();
+                Toast.makeText(MainActivity.this, "Finish", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 

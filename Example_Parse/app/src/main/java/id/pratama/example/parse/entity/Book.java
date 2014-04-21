@@ -9,16 +9,20 @@ import com.parse.ParseObject;
 @ParseClassName("book")
 public class Book extends ParseObject {
 
-    private String id;
-    private String judul;
-    private String pengarang;
-    private String penerbit;
+    public Book() {
+    }
+
+    public Book(String judul, String pengarang, String penerbit) {
+        setJudul(judul);
+        setPengarang(pengarang);
+        setPenerbit(penerbit);
+    }
 
     public Book(String id, String judul, String pengarang, String penerbit) {
-        this.id = id;
-        this.judul = judul;
-        this.pengarang = pengarang;
-        this.penerbit = penerbit;
+        setId(id);
+        setJudul(judul);
+        setPengarang(pengarang);
+        setPenerbit(penerbit);
     }
 
     public String getId() {
