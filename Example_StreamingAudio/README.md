@@ -8,7 +8,7 @@ http://pratamawijaya.com/programming/android-programming/android-tutorial-radio-
 Developed By
 ============
 
-- Pratama Nur Wijaya [@tama_hk](twitter.com/tama_hk)
+- Pratama Nur Wijaya [@tama_hk](https://twitter.com/tama_hk)
 
 Notes
 =====
