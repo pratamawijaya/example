@@ -6,7 +6,6 @@ import com.parse.Parse;
 import com.parse.ParseObject;
 
 import id.pratama.example.parse.entity.Book;
-import id.pratama.example.parse.entity.Toko;
 
 /**
  * Created by pratama on 4/21/14.
@@ -21,7 +20,7 @@ public class BaseApplication extends Application {
 
         // register class
         ParseObject.registerSubclass(Book.class);
-        ParseObject.registerSubclass(Toko.class);
+        //      ParseObject.registerSubclass(Toko.class);
 
 
         // initialize parse

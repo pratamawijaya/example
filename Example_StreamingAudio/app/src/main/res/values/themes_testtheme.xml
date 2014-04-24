@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="TestTheme" parent="@style/_TestTheme"/>
+
+  <style name="_TestTheme" parent="Theme.AppCompat.Light">
+
+    <item name="android:buttonStyle">@style/ButtonTestTheme</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonTestTheme</item>
+
+    <item name="android:spinnerStyle">@style/SpinnerTestTheme</item>
+
+    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemTestTheme</item>
+
+  </style>
+
+</resources>

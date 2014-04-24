@@ -3,16 +3,21 @@ package id.pratama.example.parse;
 import android.app.ProgressDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import id.pratama.example.parse.entity.Book;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -27,6 +32,18 @@ public class MainActivity extends ActionBarActivity {
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading...");
+
+        ParseQuery<Book> query = ParseQuery.getQuery(Book.class);
+        query.findInBackground(new FindCallback<Book>() {
+            @Override
+            public void done(List<Book> books, ParseException e) {
+                for (Book b : books){
+                    String tes = b.getJudul();
+                    Log.d("tag",""+tes);
+                }
+
+            }
+        });
 
         listBook = new ArrayList<ParseObject>();
 //        listBook.add(new Toko("Gramedia Lampung","Jl. Jenderal Sudirman"));
