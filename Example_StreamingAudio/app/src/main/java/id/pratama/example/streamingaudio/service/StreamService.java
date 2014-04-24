@@ -1,10 +1,8 @@
-package id.pratama.example.streamingaudio;
+package id.pratama.example.streamingaudio.service;
 
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -17,6 +15,9 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
+import id.pratama.example.streamingaudio.MainActivity;
+import id.pratama.example.streamingaudio.R;
+
 /**
  * Created by pratama on 4/22/14.
  */
@@ -24,13 +25,12 @@ public class StreamService extends Service implements
         MediaPlayer.OnCompletionListener,
         MediaPlayer.OnPreparedListener,
         MediaPlayer.OnErrorListener,
-        MediaPlayer.OnSeekCompleteListener,
-        MediaPlayer.OnInfoListener,
         MediaPlayer.OnBufferingUpdateListener {
 
-
-    public static final String URL_STREAM = "";
-    private String audio;
+    /**
+     * for educational only
+     */
+    public static final String URL_STREAM = "http://jkt.jogjastreamers.com:8000/jisstereo?s=02766";
 
     // notification
     private static final int NOTIFICATION_ID = 1;
@@ -41,9 +41,7 @@ public class StreamService extends Service implements
 
     //intent
     private Intent bufferIntent;
-    private Intent seekIntent;
 
-    public static final String BROADCAST_ACTION = "id.pratama.example.streamingaudio.seekprogress";
     public static final String BROADCAST_BUFFER = "id.pratama.example.streamingaudio.broadcastbuffer";
 
     private MediaPlayer mediaPlayer = new MediaPlayer();
@@ -54,13 +52,10 @@ public class StreamService extends Service implements
         Log.d("create", "service created");
 
         bufferIntent = new Intent(BROADCAST_BUFFER);
-        seekIntent = new Intent(BROADCAST_ACTION);
 
         mediaPlayer.setOnCompletionListener(this);
         mediaPlayer.setOnPreparedListener(this);
         mediaPlayer.setOnErrorListener(this);
-        mediaPlayer.setOnSeekCompleteListener(this);
-        mediaPlayer.setOnInfoListener(this);
         mediaPlayer.setOnBufferingUpdateListener(this);
 
         mediaPlayer.reset();
@@ -69,6 +64,7 @@ public class StreamService extends Service implements
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d("play", "play streaming");
+
         telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         phoneStateListener = new PhoneStateListener() {
             @Override
@@ -106,7 +102,10 @@ public class StreamService extends Service implements
             try {
                 Log.d("streamm", "" + URL_STREAM);
                 mediaPlayer.setDataSource(URL_STREAM);
+
+                // sent to UI radio is buffer
                 sendBufferingBroadcast();
+
                 mediaPlayer.prepareAsync();
             } catch (IllegalArgumentException e) {
                 Log.d("error", e.getMessage());
@@ -116,7 +115,6 @@ public class StreamService extends Service implements
                 Log.d("error", e.getMessage());
             }
         }
-        setupHandler();
 
         return START_STICKY;
     }
@@ -129,7 +127,6 @@ public class StreamService extends Service implements
 
     @Override
     public void onBufferingUpdate(MediaPlayer mediaPlayer, int i) {
-
     }
 
 
@@ -156,29 +153,15 @@ public class StreamService extends Service implements
         return false;
     }
 
-    @Override
-    public boolean onInfo(MediaPlayer mediaPlayer, int i, int i2) {
-        return false;
-    }
 
     @Override
     public void onPrepared(MediaPlayer mediaPlayer) {
+        // sent to UI, audio has buffered
         sendBufferCompleteBroadcast();
+
         playMedia();
     }
 
-
-    @Override
-    public void onSeekComplete(MediaPlayer mediaPlayer) {
-
-    }
-
-    private BroadcastReceiver headsetReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-
-        }
-    };
 
     private void pauseMedia() {
         if (mediaPlayer.isPlaying())
@@ -197,33 +180,26 @@ public class StreamService extends Service implements
     }
 
     /**
-     * sent buff
+     * sent buffering
      */
     private void sendBufferingBroadcast() {
         bufferIntent.putExtra("buffering", "1");
         sendBroadcast(bufferIntent);
     }
 
+    /**
+     * sent buffering complete
+     */
     private void sendBufferCompleteBroadcast() {
         bufferIntent.putExtra("buffering", "0");
         sendBroadcast(bufferIntent);
     }
 
-    private void resetButtonPlayStopBroadcast() {
-        // Log.v(TAG, "BufferCompleteSent");
-        bufferIntent.putExtra("buffering", "2");
-        sendBroadcast(bufferIntent);
-    }
-
-
-    private void setupHandler() {
-
-    }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.d("tag","remove notification");
+        Log.d("tag", "remove notification");
         if (mediaPlayer != null) {
             if (mediaPlayer.isPlaying()) {
                 mediaPlayer.stop();
@@ -246,7 +222,8 @@ public class StreamService extends Service implements
         PendingIntent intent = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
         builder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic_launcher)
-                .setContentTitle("Streaming Radio");
+                .setContentTitle("Stream Radio")
+                .setContentText("895 JIZ fm");
         builder.setContentIntent(intent);
         builder.setOngoing(true);
         notificationManager.notify(NOTIFICATION_ID, builder.build());
@@ -254,7 +231,7 @@ public class StreamService extends Service implements
     }
 
     /**
-     * cancel notif
+     * cancel notification
      */
     private void cancelNotification() {
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);

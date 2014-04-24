@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <service
-            android:name=".StreamService"
+            android:name=".service.StreamService"
             android:enabled="true" />
     </application>
 
