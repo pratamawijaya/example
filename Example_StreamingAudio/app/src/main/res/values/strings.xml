@@ -5,5 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="txt_play">Play</string>
+    <string name="title_activity_test">Test</string>
+    <string name="title_activity_coba_saja">CobaSaja</string>
 
 </resources>

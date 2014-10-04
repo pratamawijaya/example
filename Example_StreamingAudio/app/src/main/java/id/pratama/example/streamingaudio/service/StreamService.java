@@ -30,7 +30,10 @@ public class StreamService extends Service implements
     /**
      * for educational only
      */
-    public static final String URL_STREAM = "http://jkt.jogjastreamers.com:8000/jisstereo?s=02766";
+    // public static final String URL_STREAM = "http://jkt.jogjastreamers.com:8000/jisstereo?s=02766";
+
+    // radio UNISI
+    public static final String URL_STREAM = "http://202.162.32.23:8000";
 
     // notification
     private static final int NOTIFICATION_ID = 1;

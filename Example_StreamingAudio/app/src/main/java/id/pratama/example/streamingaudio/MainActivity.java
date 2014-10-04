@@ -98,7 +98,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         } catch (Exception e) {
 
         }
-
     }
 
     private BroadcastReceiver broadcastBufferReceiver = new BroadcastReceiver() {
@@ -111,8 +110,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private void showProgressDialog(Intent bufferIntent) {
         String bufferValue = bufferIntent.getStringExtra("buffering");
         int bufferIntValue = Integer.parseInt(bufferValue);
-
-
         switch (bufferIntValue) {
             case 0:
                 if (pdBuff != null) {
@@ -124,10 +121,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 pdBuff = ProgressDialog.show(MainActivity.this, "",
                         "Streaming...", true);
                 break;
-
-
         }
     }
-
-
 }
