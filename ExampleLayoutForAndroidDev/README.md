@@ -9,6 +9,7 @@ Coded By
 
 * Pratama Nur Wijaya - <set.mnemonix@gmail.com>
 * @tama_hk
+* http://pratamawijaya.com
 
 License
 ==========
