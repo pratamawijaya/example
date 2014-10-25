@@ -3,6 +3,9 @@ Just Example Layout for CodeAndroidIndonesia
 
 Its just a sample, do whatever u want
 
+To Do
+==========
+Layout soal ketika landscape masih ngacoo.. benerin sendiri :yawn:
 
 Coded By
 ============
