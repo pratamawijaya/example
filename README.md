@@ -1,4 +1,4 @@
 example
 =======
 
-This just some example ~
+This is just some example ~
