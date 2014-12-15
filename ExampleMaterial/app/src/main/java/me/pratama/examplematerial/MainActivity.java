@@ -18,7 +18,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     ListView listView;
 
     private ArrayAdapter<String> adapter;
-    private String[] listMenu = {"FAB"};
+    private String[] listMenu = {"FAB (Floating Action Button)"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

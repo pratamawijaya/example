@@ -7,7 +7,7 @@
 
     <include layout="@layout/toolbar" />
 
-    <RelativeLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -16,13 +16,80 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/ripple"
             android:layout_marginBottom="20dp"
-            android:layout_alignParentBottom="true"
             android:tint="@color/primaryColor"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/ic_launcher"
-            android:elevation="5dp"
-            android:layout_width="60dp"
-            android:layout_height="60dp" />
-    </RelativeLayout>
+            android:src="@drawable/ic_add"
+            android:elevation="@dimen/defaultElevation"
+            android:layout_gravity="bottom|right"
+            android:layout_width="@dimen/btnFabSize"
+            android:layout_height="@dimen/btnFabSize" />
+
+        <RelativeLayout
+            android:id="@+id/expanded_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <ImageButton
+                android:id="@+id/act_collapse"
+                android:layout_width="@dimen/btnFabSize"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="20dp"
+                android:layout_height="@dimen/btnFabSize"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ripple"
+                android:src="@drawable/ic_add"
+                android:elevation="@dimen/defaultElevation"
+                android:tint="@color/primaryColorDark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:gravity="right"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/act_collapse"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+
+                <ImageButton
+                    android:id="@+id/btn_action_1"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_launcher"
+                    android:tint="@color/primaryColorDark" />
+
+                <ImageButton
+                    android:id="@+id/btn_action_2"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_launcher"
+                    android:tint="@color/primaryColorDark" />
+
+                <ImageButton
+                    android:id="@+id/btn_action_3"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_launcher"
+                    android:tint="@color/primaryColorDark" />
+
+                <ImageButton
+                    android:id="@+id/btn_action_4"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_launcher"
+                    android:tint="@color/primaryColorDark" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </FrameLayout>
 
 </LinearLayout>
