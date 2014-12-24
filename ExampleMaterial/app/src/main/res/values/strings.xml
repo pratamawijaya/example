@@ -8,5 +8,6 @@
     <string name="txt_open">open</string>
     <string name="txt_close">close</string>
     <string name="title_activity_fab">FabActivity</string>
+    <string name="title_activity_recycler_view">RecyclerViewActivity</string>
 
 </resources>

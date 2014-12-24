@@ -1,6 +1,7 @@
 package me.pratama.examplematerial;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,6 +11,7 @@ import android.widget.ListView;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import me.pratama.examplematerial.ui.FabActivity;
+import me.pratama.examplematerial.ui.RecyclerViewActivity;
 
 
 public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
@@ -18,7 +20,13 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     ListView listView;
 
     private ArrayAdapter<String> adapter;
-    private String[] listMenu = {"FAB (Floating Action Button)"};
+    private String[] listMenu = {
+            "FAB (Floating Action Button)",
+            "RecylerView"
+    };
+
+    public static SharedPreferences settings;
+    public static SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +45,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         switch (i) {
             case 0:
                 startActivity(new Intent(this, FabActivity.class));
+                break;
+            case 1:
+                startActivity(new Intent(this, RecyclerViewActivity.class));
                 break;
         }
     }
