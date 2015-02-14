@@ -23,6 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--service-->
+        <service
+            android:name=".FetchAddressIntentService"
+            android:exported="false" />
     </application>
 
 </manifest>
