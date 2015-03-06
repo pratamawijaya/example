@@ -1,0 +1,30 @@
+<com.pratamawijaya.examplenavdrawerfragment.navdrawer.FragmentNavigationDrawer xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    tools:context=".MainActivity">
+
+    <!--content-->
+    <LinearLayout
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/toolbar" />
+
+        <FrameLayout
+            android:id="@+id/containerContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <!--nav bar-->
+    <ListView
+        android:layout_width="240dp"
+        android:id="@+id/lvDrawer"
+        android:layout_gravity="start"
+        android:layout_height="match_parent" />
+</com.pratamawijaya.examplenavdrawerfragment.navdrawer.FragmentNavigationDrawer>
