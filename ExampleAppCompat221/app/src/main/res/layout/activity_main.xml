@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:text="asfaf"
+        android:textSize="33sp"
+        android:layout_height="wrap_content"></android.support.v7.widget.AppCompatButton>
+
+
+    <!--<Button-->
+    <!--android:text="asfa"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content" />-->
+
+</RelativeLayout>

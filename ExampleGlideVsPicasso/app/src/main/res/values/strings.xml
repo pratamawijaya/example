@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ExampleGlideVsPicasso</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_glide">GlideActivity</string>
+    <string name="title_activity_picasso">PicassoActivity</string>
+</resources>

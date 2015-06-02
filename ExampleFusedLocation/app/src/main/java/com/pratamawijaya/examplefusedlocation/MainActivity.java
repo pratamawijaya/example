@@ -42,7 +42,7 @@ public class MainActivity extends Activity implements
 
     // params for Location Update
     private static final LocationRequest REQUEST = LocationRequest.create()
-            .setInterval(5000)// update location every 5 second
+            .setInterval(2000)// update location every 5 second
             .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);// set priority, example. high accuracy
 
     @Override
@@ -93,6 +93,8 @@ public class MainActivity extends Activity implements
                 Toast.makeText(this, "Get location user : " + location.getLatitude() + "," + location.getLongitude(), Toast.LENGTH_SHORT).show();
                 //get address
                 startIntentService();
+
+                LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, REQUEST, this);
             }
         }
     }
