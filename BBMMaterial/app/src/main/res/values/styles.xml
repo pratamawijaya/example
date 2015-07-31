@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="Theme.BBMMaterial" parent="Base.Theme.BBMMaterial">
+
+    </style>
+
+    <style name="Base.Theme.BBMMaterial" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/bbm_material_primaryColor</item>
+        <item name="colorPrimaryDark">@color/bbm_material_primaryColorDark</item>
+        <item name="colorAccent">@color/bbm_material_accentColor</item>
+    </style>
+
+</resources>

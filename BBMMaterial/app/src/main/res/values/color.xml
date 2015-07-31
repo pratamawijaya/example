@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bbm_material_primaryColor">#F44336</color>
+    <color name="bbm_material_primaryColorLight">#EF9A9A</color>
+    <color name="bbm_material_primaryColorDark">#C62828</color>
+    <color name="bbm_material_accentColor">#536DFE</color>
+</resources>

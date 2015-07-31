@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/txtAux1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:gravity="right"
+        android:text="@string/nome"
+        android:width="70dip" >
+    </TextView>
+
+    <EditText
+        android:id="@+id/edtNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_toRightOf="@+id/txtAux1"
+        android:inputType="textPersonName"
+        android:width="190dip" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/txtAux2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edtNome"
+        android:layout_centerVertical="@+id/edtCpf"
+        android:layout_marginTop="10dip"
+        android:gravity="right"
+        android:text="@string/cpf"
+        android:width="70dip" >
+    </TextView>
+
+    <EditText
+        android:id="@+id/edtCpf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtNome"
+        android:layout_marginLeft="5dip"
+        android:layout_toRightOf="@+id/txtAux2"
+        android:inputType="text"
+        android:width="190dip" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/txtAux3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edtCpf"
+        android:layout_centerVertical="@+id/edtTelefone"
+        android:layout_marginTop="10dip"
+        android:gravity="right"
+        android:text="@string/telefone"
+        android:width="70dip" />
+    
+    <EditText 
+        android:id="@+id/edtTelefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtCpf"
+        android:layout_marginLeft="5dip"
+        android:layout_toRightOf="@+id/txtAux3"
+        android:width="190dip"
+        android:inputType="phone"
+        />
+    
+    <TextView 
+        android:id="@+id/txtAux4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edtTelefone"
+        android:layout_centerVertical="@+id/edtEmail"
+        android:layout_marginTop="10dip"
+        android:gravity="right"
+        android:text="@string/email"
+        android:width="70dip" />
+        
+    <EditText 
+        android:id="@+id/edtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtTelefone"
+        android:layout_marginLeft="5dip"
+        android:layout_toRightOf="@+id/txtAux4"
+        android:width="190dip"
+        android:inputType="textEmailAddress"
+        />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtEmail"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btnInserir"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:onClick="btnInserir_click"
+            android:text="@string/inserir" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:onClick="btnCancelar_click"
+            android:text="@string/cancelar" />
+
+    </LinearLayout>
+
+</RelativeLayout>

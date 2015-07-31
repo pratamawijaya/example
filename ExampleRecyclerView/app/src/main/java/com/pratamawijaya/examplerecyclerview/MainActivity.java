@@ -10,13 +10,13 @@ import com.pratamawijaya.examplerecyclerview.adapter.MainAdapter;
 import com.pratamawijaya.examplerecyclerview.helper.DividedItemDecoration;
 import com.pratamawijaya.examplerecyclerview.helper.RecyclerItemClickListener;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 
 public class MainActivity extends BaseActivity {
 
-    @InjectView(R.id.recyclerview)
+    @Bind(R.id.recyclerview)
     RecyclerView recyclerView;
 
     private String[] listMenu = {
@@ -30,7 +30,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         stringArrayAdapter = new MainAdapter(this, listMenu);
 

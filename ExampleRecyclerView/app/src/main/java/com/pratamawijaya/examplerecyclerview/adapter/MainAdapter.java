@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import com.pratamawijaya.examplerecyclerview.R;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * Created by pratama on 2/17/15.
@@ -42,12 +42,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        @InjectView(R.id.text)
+        @Bind(R.id.text)
         TextView text;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this,itemView);
         }
     }
 }

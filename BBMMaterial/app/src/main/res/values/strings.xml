@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">BBM Material</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="invites">Invites</string>
+    <string name="chanels">Channels</string>
+    <string name="settings">Settings</string>
+    <string name="report_a_problem">Report a Problem</string>
+    <string name="help">Help</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

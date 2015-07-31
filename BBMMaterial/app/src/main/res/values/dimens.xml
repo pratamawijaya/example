@@ -1,0 +1,9 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- user nav drawer-->
+    <dimen name="img_user_size">100dp</dimen>
+    <dimen name="header_height">220dp</dimen>
+</resources>

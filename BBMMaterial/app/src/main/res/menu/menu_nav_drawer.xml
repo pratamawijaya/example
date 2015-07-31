@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/menu_invites"
+            android:icon="@drawable/ic_person_add_grey_700_24dp"
+            android:title="@string/invites" />
+
+
+        <item
+            android:id="@+id/menu_channels"
+            android:icon="@drawable/ic_people_outline_grey_700_24dp"
+            android:title="@string/chanels" />
+
+        <item
+            android:id="@+id/menu_settings"
+            android:icon="@drawable/ic_settings_grey_700_24dp"
+            android:title="@string/settings" />
+
+        <item
+            android:id="@+id/menu_report_problem"
+            android:icon="@drawable/ic_bug_report_grey_700_24dp"
+            android:title="@string/report_a_problem" />
+
+        <item
+            android:id="@+id/menu_help"
+            android:icon="@drawable/ic_help_grey_700_24dp"
+            android:title="@string/help" />
+    </group>
+</menu>

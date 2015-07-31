@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="app_name">Android-CRUD</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello">Hello</string>
+    <string name="nome">Nome: </string>
+    <string name="cpf">CPF: </string>
+    <string name="telefone">Telefone: </string>
+    <string name="email">E-mail: </string>
+    <string name="inserir">Inserir</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="crNome">Nome</string>
+    <string name="crCpf">CPF</string>
+    <string name="crTelefone">Telefone</string>
+    <string name="crEmail">Email</string>
+
+</resources>
