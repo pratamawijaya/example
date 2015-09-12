@@ -4,15 +4,14 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.pratamawijaya.retrofit20.data.RetrofitHelper;
 import com.pratamawijaya.retrofit20.model.Contributor;
 import java.util.List;
-import rx.Observer;
+import rx.Observable;
+import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,24 +30,42 @@ public class MainActivity extends AppCompatActivity {
 
     api = new RetrofitHelper();
 
-    api.getService()
-        .contributors("square", "retrofit")
-        .subscribeOn(Schedulers.newThread())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Observer<List<Contributor>>() {
+    Observable<List<Contributor>> observable = api.getService().contributors("square", "retrofit");
+
+    observable.observeOn(AndroidSchedulers.mainThread())
+        .subscribe(new Subscriber<List<Contributor>>() {
           @Override public void onCompleted() {
-            progressDialog.dismiss();
+
           }
 
           @Override public void onError(Throwable e) {
-            Timber.e("error : " + e.toString());
+
           }
 
           @Override public void onNext(List<Contributor> contributors) {
             for (Contributor data : contributors)
-              Log.d("data", "" + data.getLogin());
+              Timber.d("data :" + data.getLogin());
           }
         });
+
+    //api.getService()
+    //    .contributors("square", "retrofit")
+    //    .subscribeOn(Schedulers.newThread())
+    //    .observeOn(AndroidSchedulers.mainThread())
+    //    .subscribe(new Observer<List<Contributor>>() {
+    //      @Override public void onCompleted() {
+    //        progressDialog.dismiss();
+    //      }
+    //
+    //      @Override public void onError(Throwable e) {
+    //        Timber.e("error : " + e.toString());
+    //      }
+    //
+    //      @Override public void onNext(List<Contributor> contributors) {
+    //        for (Contributor data : contributors)
+    //          Log.d("data", "" + data.getLogin());
+    //      }
+    //    });
 
     //Call<List<Contributor>> call = api.getService().contributors("square", "retrofit");
     //

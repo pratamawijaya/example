@@ -10,6 +10,8 @@ import timber.log.Timber;
  * Created by : pratama - set.mnemonix@gmail.com
  * Date : 9/12/15
  * Project : Retrofit20
+ *
+ * for logging thing
  */
 public class LoggingInterceptor implements Interceptor {
   @Override public Response intercept(Chain chain) throws IOException {
