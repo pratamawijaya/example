@@ -6,31 +6,36 @@
     android:background="@color/bbm_material_primaryColor"
     android:gravity="bottom"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    >
 
-    <ImageView
-        android:id="@+id/userPicture"
-        android:layout_width="@dimen/img_user_size"
-        android:layout_height="@dimen/img_user_size"
-        android:layout_marginBottom="16dp" />
+  <ImageView
+      android:id="@+id/userPicture"
+      android:layout_width="@dimen/img_user_size"
+      android:layout_height="@dimen/img_user_size"
+      tools:background="@drawable/ic_add_white_36dp"
+      android:layout_marginBottom="16dp"
+      />
 
-    <TextView
-        android:id="@+id/userName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        tools:text="Pratama Nur Wijaya" />
+  <TextView
+      android:id="@+id/userName"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="sans-serif-medium"
+      android:textColor="#FFFFFF"
+      android:textSize="14sp"
+      tools:text="Pratama Nur Wijaya"
+      />
 
-    <TextView
-        android:id="@+id/userStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        tools:text="status PM testing" />
+  <TextView
+      android:id="@+id/userStatus"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="sans-serif"
+      android:textColor="#FFFFFF"
+      android:textSize="14sp"
+      tools:text="status PM testing"
+      />
 
 
 </LinearLayout>

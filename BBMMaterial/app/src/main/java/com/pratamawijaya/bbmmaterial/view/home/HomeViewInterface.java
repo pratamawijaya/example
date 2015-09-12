@@ -1,7 +1,6 @@
 package com.pratamawijaya.bbmmaterial.view.home;
 
 import com.pratamawijaya.bbmmaterial.model.FragmentHomeItem;
-
 import java.util.List;
 
 /**
@@ -9,5 +8,5 @@ import java.util.List;
  */
 public interface HomeViewInterface {
 
-    void setupViewPager(List<FragmentHomeItem> fragmentHomeItems);
+  void setupViewPager(List<FragmentHomeItem> fragmentHomeItems);
 }
