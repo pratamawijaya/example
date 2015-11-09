@@ -1,7 +1,6 @@
-Example Library
-=======
+#Example Library
 
-Beberapa project example yang saya buat untuk coba sebuah feature
+Android Example project, while im free or trying somethin new, i have created example project and pushed it here.
 
 
 ### Its work
@@ -11,9 +10,10 @@ Beberapa project example yang saya buat untuk coba sebuah feature
 - [Google Analytics](https://github.com/pratamawijaya/example/tree/master/ExampleGoogleAnalytics)
 
 ## note 
-kadang2 ada project yang belum jadi tapi terpush, jadi gak semua project yang ada disini work, jika 'work' biasanya saya tandai 'its work'
+Not all project properly worked, please check `its work` first
 
 ## todo
 - check 'its work' or not ~_~
+- create more example
 
 
