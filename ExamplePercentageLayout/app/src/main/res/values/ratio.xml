@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <item name="ratio_16_9" type="fraction">178%</item>
+  <item name="ratio_4_3" type="fraction">133%</item>
+  <item name="ratio_1_1" type="fraction">100%</item>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- suppress AndroidDomInspection -->
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main"
+    tools:context="com.pratamawijaya.examplepercentagelayout.MainActivity"
+    >
+
+  <ImageView
+      android:id="@+id/img_16_9"
+      app:layout_widthPercent="100%"
+      app:layout_aspectRatio="@fraction/ratio_16_9"
+      android:scaleType="centerCrop"
+      />
+
+  <ImageView
+      android:layout_below="@id/img_16_9"
+      android:id="@+id/img_4_3"
+      app:layout_widthPercent="100%"
+      app:layout_aspectRatio="@fraction/ratio_4_3"
+      android:scaleType="centerCrop"
+      />
+
+</android.support.percent.PercentRelativeLayout>

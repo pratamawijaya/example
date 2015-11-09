@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#999"
+    android:fitsSystemWindows="true"
+    tools:context="com.pratamawijaya.examplepercentagelayout.MainActivity"
+    >
+
+  <android.support.percent.PercentRelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="16dp"
+      >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/img_16_9"
+        app:layout_widthPercent="100%"
+        app:layout_aspectRatio="@fraction/ratio_16_9"
+        android:scaleType="centerCrop"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/img_16_9"
+        android:id="@+id/img_4_3"
+        app:layout_widthPercent="100%"
+        app:layout_aspectRatio="@fraction/ratio_4_3"
+        android:scaleType="centerCrop"
+        />
+
+  </android.support.percent.PercentRelativeLayout>
+
+
+</ScrollView>
