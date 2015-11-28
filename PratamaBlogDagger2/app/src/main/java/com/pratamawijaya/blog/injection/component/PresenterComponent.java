@@ -1,7 +1,8 @@
-package com.pratamawijaya.blog.presenter.inject;
+package com.pratamawijaya.blog.injection.component;
 
-import com.pratamawijaya.blog.AppComponent;
 import com.pratamawijaya.blog.presenter.MainActivityPresenter;
+import com.pratamawijaya.blog.injection.scope.ActivityScope;
+import com.pratamawijaya.blog.injection.module.PresenterModule;
 import com.pratamawijaya.blog.ui.MainActivity;
 import dagger.Component;
 

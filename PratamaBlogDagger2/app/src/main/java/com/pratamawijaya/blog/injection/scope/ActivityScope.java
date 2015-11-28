@@ -1,4 +1,4 @@
-package com.pratamawijaya.blog.presenter.inject;
+package com.pratamawijaya.blog.injection.scope;
 
 import javax.inject.Scope;
 

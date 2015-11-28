@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import com.pratamawijaya.blog.App;
-import com.pratamawijaya.blog.AppComponent;
+import com.pratamawijaya.blog.injection.component.AppComponent;
 
 /**
  * Created by : pratama - set.mnemonix@gmail.com

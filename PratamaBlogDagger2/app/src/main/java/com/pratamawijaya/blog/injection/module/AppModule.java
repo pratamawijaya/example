@@ -1,6 +1,7 @@
-package com.pratamawijaya.blog;
+package com.pratamawijaya.blog.injection.module;
 
 import android.app.Application;
+import com.pratamawijaya.blog.App;
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
