@@ -1,6 +1,0 @@
-<resources>
-  <string name="app_name">Styling</string>
-  <string name="action_settings">Settings</string>
-  <string name="title_activity_scrim">ScrimActivity</string>
-  <string name="title_activity_simple_animation">SimpleAnimationActivity</string>
-</resources>
