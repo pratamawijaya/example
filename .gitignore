@@ -3,7 +3,7 @@
 *.ap_
 
 .idea
-.iml
+*.iml
 
 # Files for the Dalvik VM
 *.dex
