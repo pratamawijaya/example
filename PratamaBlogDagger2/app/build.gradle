@@ -5,7 +5,6 @@ apply plugin: 'com.neenbedankt.android-apt'
 android {
   compileSdkVersion 23
   buildToolsVersion "23.0.2"
-
   defaultConfig {
     applicationId "com.pratamawijaya.blog"
     minSdkVersion 15
@@ -19,23 +18,71 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
+  productFlavors {
+    development {
+      applicationId 'com.pratamawijaya.blog.dev'
+      buildConfigField 'String', 'SERVER_URL', '"http://app.readflyer.com/a/v1/"'
+    }
+    production {
+      applicationId 'com.pratamawijaya.blog'
+      buildConfigField 'String', 'SERVER_URL', '"http://app.readflyer.com/a/v1/"'
+    }
+  }
 }
 
 dependencies {
+  final DAGGER_VERSION = '2.0.2'
+  final SUPPORT_VERSION = "23.1.1"
+  final DEXMAKER_VERSION = '1.4'
+  final HAMCREST_VERSION = '1.3'
+  final ESPRESSO_VERSION = '2.2.1'
+  final RUNNER_VERSION = '0.4'
+
+  def daggerCompiler = "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+  def jUnit = "junit:junit:4.12"
+  def mockito = "org.mockito:mockito-core:1.10.19"
+  androidTestCompile 'org.robolectric:robolectric:3.0'
+  androidTestCompile 'junit:junit:4.6'
+
+  // retrofit
+  compile retrofitDependencies.retrofitBase
+  compile retrofitDependencies.converter
+  compile retrofitDependencies.rxjavaAdapter
+
   compile fileTree(include: ['*.jar'], dir: 'libs')
   testCompile 'junit:junit:4.12'
   compile 'com.android.support:appcompat-v7:23.1.1'
   compile 'com.android.support:design:23.1.1'
-  // dagger 2
-  compile 'com.google.dagger:dagger:2.0'
-  provided 'com.google.dagger:dagger-compiler:2.0'
-  provided 'org.glassfish:javax.annotation:10.0-b28'
-  compile 'com.squareup.okhttp:okhttp:2.6.0'
   compile 'com.google.code.gson:gson:2.5'
-  compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
-  compile 'com.squareup.retrofit:retrofit-converters:2.0.0-beta2'
-  compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
-  compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2'
   compile 'io.reactivex:rxandroid:1.0.1'
   compile 'com.jakewharton:butterknife:7.0.1'
+  compile "com.google.dagger:dagger:$DAGGER_VERSION"
+  provided 'org.glassfish:javax.annotation:10.0-b28'
+  //Required by Dagger2
+  // Instrumentation test dependencies
+  androidTestCompile jUnit
+  androidTestCompile mockito
+  androidTestCompile "com.android.support:support-annotations:$SUPPORT_VERSION"
+  androidTestCompile("com.android.support.test.espresso:espresso-contrib:$ESPRESSO_VERSION") {
+    exclude group: 'com.android.support', module: 'appcompat'
+    exclude group: 'com.android.support', module: 'support-v4'
+    exclude group: 'com.android.support', module: 'recyclerview-v7'
+  }
+  androidTestCompile "com.android.support.test.espresso:espresso-core:$ESPRESSO_VERSION"
+  androidTestCompile "com.android.support.test:runner:$RUNNER_VERSION"
+  androidTestCompile "com.android.support.test:rules:$RUNNER_VERSION"
+  androidTestCompile "com.crittercism.dexmaker:dexmaker:$DEXMAKER_VERSION"
+  androidTestCompile "com.crittercism.dexmaker:dexmaker-dx:$DEXMAKER_VERSION"
+  androidTestCompile "com.crittercism.dexmaker:dexmaker-mockito:$DEXMAKER_VERSION"
+  // Unit tests dependencies
+  testCompile jUnit
+  testCompile mockito
+  testCompile "org.hamcrest:hamcrest-core:$HAMCREST_VERSION"
+  testCompile "org.hamcrest:hamcrest-library:$HAMCREST_VERSION"
+  testCompile "org.hamcrest:hamcrest-integration:$HAMCREST_VERSION"
+  testCompile 'org.robolectric:robolectric:3.0'
+  // APT dependencies
+  apt daggerCompiler
+  testApt daggerCompiler
+  androidTestApt daggerCompiler
 }

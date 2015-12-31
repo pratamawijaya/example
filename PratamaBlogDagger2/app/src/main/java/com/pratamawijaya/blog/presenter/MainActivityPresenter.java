@@ -1,6 +1,6 @@
 package com.pratamawijaya.blog.presenter;
 
-import com.pratamawijaya.blog.data.network.PratamaApiService;
+import com.pratamawijaya.blog.data.network.PratamaService;
 import com.pratamawijaya.blog.ui.MainActivity;
 
 /**
@@ -10,9 +10,9 @@ import com.pratamawijaya.blog.ui.MainActivity;
  */
 public class MainActivityPresenter {
   private MainActivity mainActivity;
-  private PratamaApiService service;
+  private PratamaService service;
 
-  public MainActivityPresenter(MainActivity mainActivity, PratamaApiService service) {
+  public MainActivityPresenter(MainActivity mainActivity, PratamaService service) {
     this.mainActivity = mainActivity;
     this.service = service;
   }
