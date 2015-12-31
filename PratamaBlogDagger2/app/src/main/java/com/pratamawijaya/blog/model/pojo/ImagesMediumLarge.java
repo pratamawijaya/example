@@ -1,4 +1,4 @@
-package com.pratamawijaya.blog.model;
+package com.pratamawijaya.blog.model.pojo;
 
 /**
  * Created by : pratama - set.mnemonix@gmail.com

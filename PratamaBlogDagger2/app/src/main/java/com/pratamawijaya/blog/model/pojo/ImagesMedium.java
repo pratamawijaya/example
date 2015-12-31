@@ -1,4 +1,4 @@
-package com.pratamawijaya.blog.model;
+package com.pratamawijaya.blog.model.pojo;
 
 /**
  * Created by : pratama - set.mnemonix@gmail.com
@@ -6,4 +6,7 @@ package com.pratamawijaya.blog.model;
  * Project : PratamaBlogDagger2
  */
 public class ImagesMedium {
+  public String url;
+  public int width;
+  public int height;
 }

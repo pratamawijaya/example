@@ -1,15 +1,18 @@
-package com.pratamawijaya.blog.model;
+package com.pratamawijaya.blog.model.pojo;
 
 /**
  * Created by : pratama - set.mnemonix@gmail.com
  * Date : 12/31/15
  * Project : PratamaBlogDagger2
  */
-public class Category {
+public class Attachment {
   public int id;
+  public String url;
   public String slug;
   public String title;
   public String description;
+  public String caption;
   public int parent;
-  public int post_count;
+  public String mime_type;
+  public Images images;
 }
