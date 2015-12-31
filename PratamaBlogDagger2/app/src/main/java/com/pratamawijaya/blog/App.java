@@ -6,6 +6,7 @@ import com.pratamawijaya.blog.injection.component.ApplicationComponent;
 import com.pratamawijaya.blog.injection.component.DaggerApplicationComponent;
 import com.pratamawijaya.blog.injection.module.ApplicationModule;
 import net.danlew.android.joda.JodaTimeAndroid;
+import timber.log.Timber;
 
 /**
  * Created by : pratama - set.mnemonix@gmail.com
@@ -19,6 +20,13 @@ public class App extends Application {
   @Override public void onCreate() {
     super.onCreate();
     JodaTimeAndroid.init(this);
+    setupTimber();
+  }
+
+  private void setupTimber() {
+    if (BuildConfig.DEBUG) {
+      Timber.plant(new Timber.DebugTree());
+    }
   }
 
   public ApplicationComponent getApplicationComponent() {
