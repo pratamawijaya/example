@@ -16,7 +16,7 @@ import rx.Observable;
  * Project : PratamaBlogDagger2
  */
 public interface PratamaService {
-  @GET("me/") Observable<String> getApa();
+  @GET("get_recent_posts/") Observable<String> getApa();
 
   class Creator {
     @Inject public static PratamaService newPratamaService(OkHttpClient okHttpClient, Gson gson) {

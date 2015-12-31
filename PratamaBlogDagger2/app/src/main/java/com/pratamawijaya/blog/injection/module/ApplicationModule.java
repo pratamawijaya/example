@@ -1,9 +1,12 @@
 package com.pratamawijaya.blog.injection.module;
 
 import android.app.Application;
+import android.content.Context;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.pratamawijaya.blog.data.local.DatabaseHelper;
 import com.pratamawijaya.blog.data.network.PratamaService;
+import com.pratamawijaya.blog.injection.ApplicationContext;
 import com.squareup.okhttp.OkHttpClient;
 import dagger.Module;
 import dagger.Provides;
@@ -21,6 +24,14 @@ import javax.inject.Singleton;
     this.application = application;
   }
 
+  @Provides Application provideApplication() {
+    return application;
+  }
+
+  @Provides @ApplicationContext Context provideContext() {
+    return application;
+  }
+
   @Provides @Singleton static OkHttpClient providesOkHttpClient() {
     OkHttpClient okHttpClient = new OkHttpClient();
     return okHttpClient;
@@ -33,5 +44,9 @@ import javax.inject.Singleton;
 
   @Provides @Singleton static PratamaService provideService(OkHttpClient okHttpClient, Gson gson) {
     return PratamaService.Creator.newPratamaService(okHttpClient, gson);
+  }
+
+  @Provides @Singleton static DatabaseHelper provideDatabaseHelper() {
+    return new DatabaseHelper();
   }
 }

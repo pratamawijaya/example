@@ -21,11 +21,11 @@ android {
   productFlavors {
     development {
       applicationId 'com.pratamawijaya.blog.dev'
-      buildConfigField 'String', 'SERVER_URL', '"http://app.readflyer.com/a/v1/"'
+      buildConfigField 'String', 'SERVER_URL', '"https://pratamawijaya.com/api/"'
     }
     production {
       applicationId 'com.pratamawijaya.blog'
-      buildConfigField 'String', 'SERVER_URL', '"http://app.readflyer.com/a/v1/"'
+      buildConfigField 'String', 'SERVER_URL', '"https://pratamawijaya.com/api/"'
     }
   }
 }
@@ -44,13 +44,20 @@ dependencies {
   androidTestCompile 'org.robolectric:robolectric:3.0'
   androidTestCompile 'junit:junit:4.6'
 
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  testCompile 'junit:junit:4.12'
+
+  // database
+  compile 'io.realm:realm-android:0.87.1'
+
   // retrofit
   compile retrofitDependencies.retrofitBase
   compile retrofitDependencies.converter
   compile retrofitDependencies.rxjavaAdapter
 
-  compile fileTree(include: ['*.jar'], dir: 'libs')
-  testCompile 'junit:junit:4.12'
+  compile 'net.danlew:android.joda:2.9.1'
+
+
   compile 'com.android.support:appcompat-v7:23.1.1'
   compile 'com.android.support:design:23.1.1'
   compile 'com.google.code.gson:gson:2.5'

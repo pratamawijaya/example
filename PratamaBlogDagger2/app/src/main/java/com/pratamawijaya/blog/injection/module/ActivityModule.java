@@ -11,11 +11,11 @@ import dagger.Provides;
  * Date : 12/31/15
  * Project : PratamaBlogDagger2
  */
-@Module public class ActivtyModule {
+@Module public class ActivityModule {
 
   private Activity activity;
 
-  public ActivtyModule(Activity activity) {
+  public ActivityModule(Activity activity) {
     this.activity = activity;
   }
 

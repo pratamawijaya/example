@@ -1,7 +1,7 @@
 package com.pratamawijaya.blog.presenter;
 
 import com.pratamawijaya.blog.data.network.PratamaService;
-import com.pratamawijaya.blog.ui.MainActivity;
+import com.pratamawijaya.blog.ui.home.HomeViewActivity;
 
 /**
  * Created by : pratama - set.mnemonix@gmail.com
@@ -9,11 +9,11 @@ import com.pratamawijaya.blog.ui.MainActivity;
  * Project : PratamaBlogDagger2
  */
 public class MainActivityPresenter {
-  private MainActivity mainActivity;
+  private HomeViewActivity homeViewActivity;
   private PratamaService service;
 
-  public MainActivityPresenter(MainActivity mainActivity, PratamaService service) {
-    this.mainActivity = mainActivity;
+  public MainActivityPresenter(HomeViewActivity homeViewActivity, PratamaService service) {
+    this.homeViewActivity = homeViewActivity;
     this.service = service;
   }
 
