@@ -35,7 +35,7 @@ public class App extends Application {
           .applicationModule(new ApplicationModule(this))
           .build();
     }
-    return null;
+    return applicationComponent;
   }
 
   public static App get(Context context) {

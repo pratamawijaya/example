@@ -50,8 +50,8 @@ import javax.inject.Singleton;
     return PratamaService.Creator.newPratamaService(okHttpClient, gson);
   }
 
-  @Provides @Singleton static DatabaseHelper provideDatabaseHelper() {
-    return new DatabaseHelper();
+  @Provides @Singleton static DatabaseHelper provideDatabaseHelper(Realm realm) {
+    return new DatabaseHelper(realm);
   }
 
   @Provides static Realm provideRealm(@ApplicationContext Context context) {

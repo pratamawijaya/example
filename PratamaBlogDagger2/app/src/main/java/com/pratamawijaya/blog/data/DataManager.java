@@ -22,7 +22,23 @@ import rx.Observable;
     this.databaseHelper = databaseHelper;
   }
 
+  /**
+   * sync post to local
+   *
+   * @return Observable Post
+   */
+  public Observable<Post> syncPost() {
+    return pratamaService.getRecentPost()
+        .flatMap(recentPost -> Observable.just(recentPost.posts))
+        .concatMap(posts -> databaseHelper.insertPosts(posts));
+  }
+
+  /**
+   * get post data from local
+   *
+   * @return List Post
+   */
   public Observable<List<Post>> getPosts() {
-    return null;
+    return databaseHelper.getPosts();
   }
 }

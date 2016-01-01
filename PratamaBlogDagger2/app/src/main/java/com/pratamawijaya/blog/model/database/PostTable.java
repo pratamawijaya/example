@@ -19,8 +19,17 @@ public class PostTable extends RealmObject {
   private String excerpt;
   private String date;
   private String modified;
-  private CategoryTable category;
+  private RealmList<CategoryTable> categorys;
   private AuthorTable author;
+
+  public RealmList<CategoryTable> getCategorys() {
+    return categorys;
+  }
+
+  public void setCategorys(RealmList<CategoryTable> categorys) {
+    this.categorys = categorys;
+  }
+
   private RealmList<AttachmentTable> attachments;
 
   public PostTable() {
@@ -96,14 +105,6 @@ public class PostTable extends RealmObject {
 
   public void setModified(String modified) {
     this.modified = modified;
-  }
-
-  public CategoryTable getCategory() {
-    return category;
-  }
-
-  public void setCategory(CategoryTable category) {
-    this.category = category;
   }
 
   public AuthorTable getAuthor() {

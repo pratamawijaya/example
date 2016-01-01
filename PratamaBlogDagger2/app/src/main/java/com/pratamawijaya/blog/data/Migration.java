@@ -14,7 +14,7 @@ public class Migration implements RealmMigration {
   @Override public void migrate(final DynamicRealm dynamicRealm, long oldVer, long newVer) {
     RealmSchema schema = dynamicRealm.getSchema();
     if (oldVer == 0) {
-      Timber.d("migrate(): oldver" + oldVer);
+      Timber.d("migrate(): oldver %d", oldVer);
     }
   }
 }
