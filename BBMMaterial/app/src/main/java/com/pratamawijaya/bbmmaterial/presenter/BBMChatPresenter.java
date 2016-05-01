@@ -23,14 +23,14 @@ public class BBMChatPresenter {
     chats = new ArrayList<>();
     chats.add(new Chat("Pratama Nur Wijaya", "R", "19:49",
         "https://lh5.googleusercontent.com/-3UYageA-pkw/VVIX4DoQTLI/AAAAAAAAFts/fnx6K2GbEfc/s611-no/IMG_20150425_104713.jpg",
-        "Jangan lupa makan yah :*"));
+        "asgasdgasdg"));
 
     chats.add(new Chat("Cita citata", "R", "19:45",
         "http://cdn.klimg.com/resized/630x/g/cantiknya_pose_selfie_cita_citata_penyanyi_sakitnya_tuh_disini/cita_citata-20141008-002-rita.jpg",
-        "Say jangan lupa nanti yah.."));
+        "adsgadsgasg"));
 
     chats.add(new Chat("Isyana Sarasvati", "R", "19:42",
-        "http://mtv.id/wp-content/uploads/2015/01/isyana.jpg", "Sampai besok malem ya teh :*"));
+        "http://mtv.id/wp-content/uploads/2015/01/isyana.jpg", "asdgsagag"));
 
     view.loadData(chats);
   }
